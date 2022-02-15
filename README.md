@@ -1,6 +1,7 @@
 # i2e-shortform-media-piece
 This is the rough draft/plan for my iCons 2: Renewable Energy Short Form Media Piece. I plan on making an A-Frame application that demonstrates
 the merits, drawbacks and potential implementation of using artificial intelligence to design energy-efficient temperatrue control systems.
+Storyboard: https://docs.google.com/presentation/d/1DWej7CRUq3CefAPb-soTWiWL6-BZ8krDCQE0IFlo8-0/edit?usp=sharing
 
 # Sources I plan on Using (citations for scientific papers, links for articles, to be compiled into a bibliography in one section of the Web-VR "room":
 - W. Kastner, M. J. Kofler and C. Reinisch, "Using AI to realize energy efficient yet comfortable smart homes,"
