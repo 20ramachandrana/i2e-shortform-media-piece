@@ -1,15 +1,25 @@
 <html> 
 <head>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'e') {
+                var position = document.getElementById("carousel").getAttribute("rotation")
+                position.y -= 60;
+ document.getElementById("carousel").setAttribute("rotation", position);
+            }
+        });
+    </script>
   </head>
   <body>
-<a-scene scale=".3 .3 .3">
+<a-scene>
  <a-sky color="#bfbfbf"></a-sky> 
-<a-entity position="-.81 1.81 1.237">
-  <a-camera>
+<a-entity position="7.339 2.976 14.456" rotation="0 -5 0">
+  <a-camera position="-1.359 0 -7.258" rotation="-9 0 0" wasd-controls-enabled="false">
 </a-camera>
 </a-entity>
-<a-entity obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.mtl)">
+<a-entity id="carousel" obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.mtl)"
+          position="8.05 0 0" rotation="0 -45 0">
     <!--<a-animation attribute="visible" begin="6500" to="true"></a-animation>
     <a-animation attribute="position" begin="7000" from="-.71 -.021 -1.37" to="-.71 1 -1.19" for="4000"></a-animation>
     <a-animation attribute="position" begin="11000" from="-.71 1 -1.19" to="-.76 1.175 -1.19" for="500"></a-animation>
