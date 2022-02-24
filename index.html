@@ -2,30 +2,51 @@
 <head>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script>
+        let sleepy = false;
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            sleepy = true;
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+            sleepy = false;
+        }
         let ind = 0; 
         function handleScenes() {
-            document.getElementById("left").innerHTML = "";
-            document.getElementById("right").innerHTML = "";
-            document.getElementById("bottom").innerHTML = "";
+            if (!sleepy) {
+                document.getElementById("left").innerHTML = "";
+                document.getElementById("right").innerHTML = "";
+                document.getElementById("bottom").innerHTML = "";
 
-            switch (ind%6) {
-                case 0:
-                    document.getElementById("left").innerHTML += '<a-text value="Short Form Audience Piece" position="-0.090 0.622 -0.126" scale="1.5 1.5 1.5"></a-text><a-text value="Anvitha Ramachandran" position="0.613 0.212 -0.127" scale="1 1 1"></a-text>';
-                    document.getElementById("right").innerHTML += '<a-text value="Building Energy Usage" position="0.503 0.622 -0.128" scale="1.5 1.5 1.5"></a-text><a-text value="Management Using AI" position="0.315 0.212 -0.232" scale="1.5 1.5 1.5"></a-text>';
-                    break;
-                case 1:
-                    document.getElementById("left").innerHTML += '<a-text value="What is AI?" position=".590 0.322 -0.126" scale="1.5 1.5 1.5"></a-text>';
-                    document.getElementById("right").innerHTML += '<a-image src="https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/slide1.png" position="2 0.212 -0.17" scale="4 4 4"></a-image>';
-                    break;
-                case 2:
-                    document.getElementById("left").innerHTML += '<a-text value="What types of buildings\' energy systems can be managed by AI?" align="center" position="1.7 0.322 -0.126" scale=".9 .9 .9"></a-text>';
-                    document.getElementById("right").innerHTML += '<a-image src="https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/slide2.png" position="2 0.512 -0.17" scale="4 1.5 4"></a-image>';
-                    document.getElementById("bottom").innerHTML += '<a-entity obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/equip.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/equip.mtl)"></a-entity>';
+                switch (ind % 6) {
+                    case 0:
+                        document.getElementById("left").innerHTML += '<a-text value="Short Form Audience Piece" position="-0.090 0.622 -0.126" scale="1.5 1.5 1.5"></a-text><a-text value="Anvitha Ramachandran" position="0.613 0.212 -0.127" scale="1 1 1"></a-text>';
+                        document.getElementById("right").innerHTML += '<a-text value="Building Energy Usage" position="0.503 0.622 -0.128" scale="1.5 1.5 1.5"></a-text><a-text value="Management Using AI" position="0.315 0.212 -0.232" scale="1.5 1.5 1.5"></a-text>';
+                        break;
+                    case 1:
+                        document.getElementById("left").innerHTML += '<a-text value="What is AI?" position=".590 0.322 -0.126" scale="1.5 1.5 1.5"></a-text>';
+                        document.getElementById("right").innerHTML += '<a-image src="https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/slide1.png" position="2 0.212 -0.17" scale="4 4 4"></a-image>';
+                        break;
+                    case 2:
+                        document.getElementById("left").innerHTML += '<a-text value="What types of buildings\' energy systems can be managed by AI?" align="center" position="1.7 0.322 -0.126" scale=".9 .9 .9"></a-text>';
+                        document.getElementById("right").innerHTML += '<a-image src="https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/slide2.png" position="2 0.512 -0.17" scale="4 1.5 4"></a-image>';
+                        document.getElementById("bottom").innerHTML += '<a-entity obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/equip.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/equip.mtl)" scale=".25 .25 .25" position="1.5 0.622 .6"></a-entity>';
+                        document.getElementById("bottom").innerHTML += '<a-entity obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/facility.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/facility.mtl)" scale=".25 .25 .25" position="1.5 1.622 1.6"></a-entity>';
+                        document.getElementById("bottom").innerHTML += '<a-entity obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/building.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/building.mtl)" scale=".25 .25 .25" position="2 1.622 2.6"></a-entity>';
+                        break;
+                    case 3:
+                        document.getElementById("left").innerHTML += '<a-text value="What types of buildings\' energy systems can be managed by AI?" align="center" position="1.7 0.322 -0.126" scale=".9 .9 .9"></a-text>';
+                        document.getElementById("right").innerHTML += '<a-image src="https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/slide3.png" position="2 0.512 -0.17" scale="4 1.5 4"></a-image>';
+                        break;
+                    case 4:
 
-                    break;
-                case 3:
+                        break;
+                    case 5:
 
-                    break;
+                        break;
+                }
             }
         }
         function throttle(func, interval) {
