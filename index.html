@@ -4,11 +4,16 @@
     <script>
         let ind = 0; 
         function handleScenes() {
-            document.getElementById("addable").innerHTML = "";
+            document.getElementById("left").innerHTML = "";
+            document.getElementById("right").innerHTML = "";
             switch (ind%6) {
                 case 0:
-                    document.getElementById("addable").innerHTML += '<a-text value="Short Form Audience Piece Storyboard"></a-text>';
-                    
+                    document.getElementById("left").innerHTML += '<a-text value="Short Form Audience Piece" position="-0.090 0.622 -0.126" scale="1.5 1.5 1.5"></a-text><a-text value="Anvitha Ramachandran" position="0.613 0.212 -0.127" scale="1 1 1"></a-text>';
+                    document.getElementById("right").innerHTML += '<a-text value="Building Energy Usage" position="0.503 0.622 -0.128" scale="1.5 1.5 1.5"></a-text><a-text value="Management Using AI" position="0.315 0.212 -0.232" scale="1.5 1.5 1.5"></a-text>';
+                    break;
+                case 1:
+                    document.getElementById("left").innerHTML += '<a-text value="What is AI?" position=".590 0.322 -0.126" scale="1.5 1.5 1.5"></a-text>';
+                    document.getElementById("right").innerHTML += '<a-image></a-image>';
                     break;
             }
         }
@@ -81,110 +86,114 @@
     </script>
   </head>
   <body>
-<a-scene>
- <a-sky color="#bfbfbf"></a-sky> 
-<a-entity position="7.339 2.976 14.456" rotation="0 -5 0">
-  <a-entity camera look-controls position="-1.359 0 -7.258" rotation="-9 0 0" wasd-controls-enabled="false">
-</a-entity>
-</a-entity>
-<a-entity id="carousel" obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.mtl)"
-          position="8.05 0 0" rotation="0 -45 0">
-</a-entity>
-<a-entity id="addable" position="5.035 2.417 3.431" rotation="0 45 0">
-    <a-text value="Short Form Audience Piece Storyboard"></a-text>
+      <a-scene>
+          <a-sky color="#bfbfbf"></a-sky>
+          <a-entity position="7.339 2.976 14.456" rotation="0 -5 0">
+              <a-entity camera look-controls position="-1.359 0 -7.258" rotation="-9 0 0" wasd-controls-enabled="false">
+              </a-entity>
+          </a-entity>
+          <a-entity id="carousel" obj-model="obj: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.obj); mtl: url(https://raw.githubusercontent.com/20ramachandrana/i2e-shortform-media-piece/main/carousel.mtl)"
+                    position="8.05 0 0" rotation="0 -45 0">
+          </a-entity>
+          <a-entity id="left" position="5.035 2.417 3.431" rotation="0 45 0">
+              <a-text value="Short Form Audience Piece" position="-0.090 0.622 -0.126" scale="1.5 1.5 1.5"></a-text><a-text value="Anvitha Ramachandran" position="0.613 0.212 -0.127" scale="1 1 1"></a-text>
 
-</a-entity>
-    <!--<a-animation attribute="visible" begin="6500" to="true"></a-animation>
-    <a-animation attribute="position" begin="7000" from="-.71 -.021 -1.37" to="-.71 1 -1.19" for="4000"></a-animation>
-    <a-animation attribute="position" begin="11000" from="-.71 1 -1.19" to="-.76 1.175 -1.19" for="500"></a-animation>
-    <a-animation attribute="position" begin="11500" from="-.76 1.175 -1.19" to="-.76 1.671 -1.19" for="2000"></a-animation>
-    <a-animation attribute="position" begin="13500" from="-.76 1.671 -1.19" to="-.81 1.801 -1.19" for="500"></a-animation>
-    <a-animation attribute="position" begin="14000" from="-.81 1.801 -1.19" to="-.81 2.39 -1.19" for="2000"></a-animation>
-    <a-animation attribute="visible" begin="27000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.mtl)" scale=".05 .05 .05" position="-1.59 1.889 -1.25" visible="false">
-        <a-animation attribute="visible" begin="500" to="true"></a-animation>
-        <a-animation attribute="position" begin="4000" from="-1.59 1.889 -1.25" to="-.73 2.567 -1.25" for="1000"></a-animation>
-        <a-animation attribute="visible" begin="15000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.mtl)" scale=".05 .05 .05" position="-1.59 2.07 -1.25" visible="false">
-        <a-animation attribute="visible" begin="500" to="true"></a-animation>
-        <a-animation attribute="position" begin="4000" from="-1.59 1.889 -1.25" to="-.74 2.863 -1.25" for="1000"></a-animation>
-        <a-animation attribute="visible" begin="40000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/infresp.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/infresp.mtl)" position="0.414 -.02 -.74">
-        <a-animation attribute="scale" begin="5500" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/vr.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/vr.mtl)" position="0.416 -.169 -.76">
-        <a-animation attribute="scale" begin="5500" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
-    </a-entity>
-    <a-text value="skin with a cut" position="-1.07 1.897 -1.13" color="#0000ff" rotation="0 0 -90"></a-text>
-    <a-text value="inflammatory response" color="#0000ff" visible="false" position="-1.46 3.541 -1.33" scale=".5 .5 .5">
-        <a-animation attribute="visible" begin="5500" to="true"></a-animation>
-        <a-animation attribute="visible" begin="8000" to="false"></a-animation>
-    </a-text>
-    <a-text value="macrophage presents antigen to the t cell" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
-        <a-animation attribute="visible" begin="14500" to="true"></a-animation>
-        <a-animation attribute="visible" begin="21000" to="false"></a-animation>
-    </a-text>
-    <a-cone color="#000000" rotation="180 0 0" scale=".04 .09 .04" position="-.84 2.25 -1.19" visible="false">
-        <a-animation attribute="visible" begin="15500" to="true"></a-animation>
+          </a-entity>
+          <a-entity id="right" position="7.921 2.417 0.960" rotation="0 -75 0">
+              <a-text value="Building Energy Usage" position="0.503 0.622 -0.128" scale="1.5 1.5 1.5"></a-text><a-text value="Management Using AI" position="0.315 0.212 -0.232" scale="1.5 1.5 1.5"></a-text>
+
+          </a-entity>
+              <!--<a-animation attribute="visible" begin="6500" to="true"></a-animation>
+        <a-animation attribute="position" begin="7000" from="-.71 -.021 -1.37" to="-.71 1 -1.19" for="4000"></a-animation>
+        <a-animation attribute="position" begin="11000" from="-.71 1 -1.19" to="-.76 1.175 -1.19" for="500"></a-animation>
+        <a-animation attribute="position" begin="11500" from="-.76 1.175 -1.19" to="-.76 1.671 -1.19" for="2000"></a-animation>
+        <a-animation attribute="position" begin="13500" from="-.76 1.671 -1.19" to="-.81 1.801 -1.19" for="500"></a-animation>
+        <a-animation attribute="position" begin="14000" from="-.81 1.801 -1.19" to="-.81 2.39 -1.19" for="2000"></a-animation>
         <a-animation attribute="visible" begin="27000" to="false"></a-animation>
-    </a-cone>
-    <a-text value="antigen" position="-.91 2.25 -1.08" color="#ffff00" scale=".25 .25 .25" visible="false">
-        <a-animation attribute="visible" begin="15500" to="true"></a-animation>
-        <a-animation attribute="visible" begin="27000" to="false"></a-animation>
-    </a-text>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/htc.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/htc.mtl)" position="-.71 -.021 -1.19" scale=".07 .07 .07" visible="false">
-        <a-animation attribute="visible" begin="15500" to="true"></a-animation>
-        <a-animation attribute="position" begin="16000" from="-.71 -.021 -1.37" to="-.71 1 -1.19" for="4000"></a-animation>
-        <a-animation attribute="position" begin="20000" from="-.71 1 -1.19" to="-.76 1.175 -1.19" for="500"></a-animation>
-        <a-animation attribute="position" begin="20500" from="-.76 1.175 -1.19" to="-.76 1.671 -1.19" for="2000"></a-animation>
-        <a-animation attribute="position" begin="22500" from="-.76 1.671 -1.19" to="-.81 1.801 -1.19" for="500"></a-animation>
-        <a-animation attribute="position" begin="23000" from="-.81 1.801 -1.19" to="-.83 1.929 -1.19" for="2000"></a-animation>
-        <a-animation attribute="visible" begin="27000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/blymph.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/blymph.mtl)" position="-.59 -.02 -1.5" scale=".2 .2 .2" visible="false">
-        <a-animation attribute="visible" begin="27500" to="true"></a-animation>
-        <a-animation attribute="position" begin="29000" from="-.59 -.0763 -1.37" to="-.59 .86 -1.5" for="4000"></a-animation>
-        <a-animation attribute="position" begin="33000" from="-.59 .86 -1.5" to="-.65 .984 -1.5" for="500"></a-animation>
-        <a-animation attribute="position" begin="33500" from="-.65 .984 -1.5" to="-.64 1.514 -1.5" for="2000"></a-animation>
-        <a-animation attribute="position" begin="35500" from="-.65 1.514 -1.5" to="-.71 1.602 -1.5" for="500"></a-animation>
-        <a-animation attribute="position" begin="36000" from="-.71 1.602 -1.5" to="-.7 2.476 -1.5" for="2000"></a-animation>
-        <a-animation attribute="visible" begin="40000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.mtl)" position="-.7 2.476 -1.17" scale=".025 .025 .025" visible="false">
-        <a-animation attribute="visible" begin="37500" to="true"></a-animation>
-        <a-animation attribute="position" begin="38500" from="-.8 2.476 -1.17" to="-.81 2.704 -1.17" for="1000"></a-animation>
-        <a-animation attribute="visible" begin="40000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.mtl)" position="-.8 2.502 -1.17" scale=".025 .025 .025" visible="false">
-        <a-animation attribute="visible" begin="37500" to="true"></a-animation>
-        <a-animation attribute="position" begin="38500" from="-.8 2.502 -1.17" to="-.81 2.650 -1.17" for="200"></a-animation>
-        <a-animation attribute="visible" begin="40000" to="false"></a-animation>
-    </a-entity>
-    <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/memorycell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/memorycell.mtl)" position="-.7 2.476 -1.5" scale=".2 .2 .2" visible="false">
-        <a-animation attribute="visible" begin="40000" to="true"></a-animation>
-        <a-animation attribute="position" begin="41000" from="-.7 2.476 -1.5" to="-.7 1.602 -1.5" for="2000"></a-animation>
-        <a-animation attribute="position" begin="43000" from="-.7 1.602 -1.5" to="-.64 1.514 -1.5" for="500"></a-animation>
-        <a-animation attribute="position" begin="43500" from="-.64 1.514 -1.5" to="-.64 .955 -1.5" for="500"></a-animation>
-        <a-animation attribute="position" begin="44000" from="-.64 .955 -1.5" to="-.59 .895 -1.5" for="500"></a-animation>
-        <a-animation attribute="position" begin="44500" from="-.59 .895 -1.5" to="-.59 -.18 -1.5" for="500"></a-animation>
-        <a-animation attribute="visible" begin="45000" to="false"></a-animation>
-    </a-entity>
-    <a-text value="b cell notified, goes to site of pathogen" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
-        <a-animation attribute="visible" begin="28000" to="true"></a-animation>
-        <a-animation attribute="visible" begin="31000" to="false"></a-animation>
-    </a-text>
-    <a-text value="b cell replicates itself and creates plasma cells to kill the pathogen" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
-        <a-animation attribute="visible" begin="38000" to="true"></a-animation>
-        <a-animation attribute="visible" begin="40000" to="false"></a-animation>
-    </a-text>
-    <a-text value="pathogen killed, memory cells stay in bloodstream, to remove pathogen quickly when exposed to it again" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
-        <a-animation attribute="visible" begin="42000" to="true"></a-animation>
-        <a-animation attribute="visible" begin="52000" to="false"></a-animation>
-    </a-text>
-    -->
-</a-scene>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.mtl)" scale=".05 .05 .05" position="-1.59 1.889 -1.25" visible="false">
+            <a-animation attribute="visible" begin="500" to="true"></a-animation>
+            <a-animation attribute="position" begin="4000" from="-1.59 1.889 -1.25" to="-.73 2.567 -1.25" for="1000"></a-animation>
+            <a-animation attribute="visible" begin="15000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/pathogen.mtl)" scale=".05 .05 .05" position="-1.59 2.07 -1.25" visible="false">
+            <a-animation attribute="visible" begin="500" to="true"></a-animation>
+            <a-animation attribute="position" begin="4000" from="-1.59 1.889 -1.25" to="-.74 2.863 -1.25" for="1000"></a-animation>
+            <a-animation attribute="visible" begin="40000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/infresp.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/infresp.mtl)" position="0.414 -.02 -.74">
+            <a-animation attribute="scale" begin="5500" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/vr.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/vr.mtl)" position="0.416 -.169 -.76">
+            <a-animation attribute="scale" begin="5500" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
+        </a-entity>
+        <a-text value="skin with a cut" position="-1.07 1.897 -1.13" color="#0000ff" rotation="0 0 -90"></a-text>
+        <a-text value="inflammatory response" color="#0000ff" visible="false" position="-1.46 3.541 -1.33" scale=".5 .5 .5">
+            <a-animation attribute="visible" begin="5500" to="true"></a-animation>
+            <a-animation attribute="visible" begin="8000" to="false"></a-animation>
+        </a-text>
+        <a-text value="macrophage presents antigen to the t cell" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
+            <a-animation attribute="visible" begin="14500" to="true"></a-animation>
+            <a-animation attribute="visible" begin="21000" to="false"></a-animation>
+        </a-text>
+        <a-cone color="#000000" rotation="180 0 0" scale=".04 .09 .04" position="-.84 2.25 -1.19" visible="false">
+            <a-animation attribute="visible" begin="15500" to="true"></a-animation>
+            <a-animation attribute="visible" begin="27000" to="false"></a-animation>
+        </a-cone>
+        <a-text value="antigen" position="-.91 2.25 -1.08" color="#ffff00" scale=".25 .25 .25" visible="false">
+            <a-animation attribute="visible" begin="15500" to="true"></a-animation>
+            <a-animation attribute="visible" begin="27000" to="false"></a-animation>
+        </a-text>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/htc.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/htc.mtl)" position="-.71 -.021 -1.19" scale=".07 .07 .07" visible="false">
+            <a-animation attribute="visible" begin="15500" to="true"></a-animation>
+            <a-animation attribute="position" begin="16000" from="-.71 -.021 -1.37" to="-.71 1 -1.19" for="4000"></a-animation>
+            <a-animation attribute="position" begin="20000" from="-.71 1 -1.19" to="-.76 1.175 -1.19" for="500"></a-animation>
+            <a-animation attribute="position" begin="20500" from="-.76 1.175 -1.19" to="-.76 1.671 -1.19" for="2000"></a-animation>
+            <a-animation attribute="position" begin="22500" from="-.76 1.671 -1.19" to="-.81 1.801 -1.19" for="500"></a-animation>
+            <a-animation attribute="position" begin="23000" from="-.81 1.801 -1.19" to="-.83 1.929 -1.19" for="2000"></a-animation>
+            <a-animation attribute="visible" begin="27000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/blymph.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/blymph.mtl)" position="-.59 -.02 -1.5" scale=".2 .2 .2" visible="false">
+            <a-animation attribute="visible" begin="27500" to="true"></a-animation>
+            <a-animation attribute="position" begin="29000" from="-.59 -.0763 -1.37" to="-.59 .86 -1.5" for="4000"></a-animation>
+            <a-animation attribute="position" begin="33000" from="-.59 .86 -1.5" to="-.65 .984 -1.5" for="500"></a-animation>
+            <a-animation attribute="position" begin="33500" from="-.65 .984 -1.5" to="-.64 1.514 -1.5" for="2000"></a-animation>
+            <a-animation attribute="position" begin="35500" from="-.65 1.514 -1.5" to="-.71 1.602 -1.5" for="500"></a-animation>
+            <a-animation attribute="position" begin="36000" from="-.71 1.602 -1.5" to="-.7 2.476 -1.5" for="2000"></a-animation>
+            <a-animation attribute="visible" begin="40000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.mtl)" position="-.7 2.476 -1.17" scale=".025 .025 .025" visible="false">
+            <a-animation attribute="visible" begin="37500" to="true"></a-animation>
+            <a-animation attribute="position" begin="38500" from="-.8 2.476 -1.17" to="-.81 2.704 -1.17" for="1000"></a-animation>
+            <a-animation attribute="visible" begin="40000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/plasmacell.mtl)" position="-.8 2.502 -1.17" scale=".025 .025 .025" visible="false">
+            <a-animation attribute="visible" begin="37500" to="true"></a-animation>
+            <a-animation attribute="position" begin="38500" from="-.8 2.502 -1.17" to="-.81 2.650 -1.17" for="200"></a-animation>
+            <a-animation attribute="visible" begin="40000" to="false"></a-animation>
+        </a-entity>
+        <a-entity obj-model="obj: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/memorycell.obj); mtl: url(https://raw.githubusercontent.com/anoncs50/Immune-System-VR/master/memorycell.mtl)" position="-.7 2.476 -1.5" scale=".2 .2 .2" visible="false">
+            <a-animation attribute="visible" begin="40000" to="true"></a-animation>
+            <a-animation attribute="position" begin="41000" from="-.7 2.476 -1.5" to="-.7 1.602 -1.5" for="2000"></a-animation>
+            <a-animation attribute="position" begin="43000" from="-.7 1.602 -1.5" to="-.64 1.514 -1.5" for="500"></a-animation>
+            <a-animation attribute="position" begin="43500" from="-.64 1.514 -1.5" to="-.64 .955 -1.5" for="500"></a-animation>
+            <a-animation attribute="position" begin="44000" from="-.64 .955 -1.5" to="-.59 .895 -1.5" for="500"></a-animation>
+            <a-animation attribute="position" begin="44500" from="-.59 .895 -1.5" to="-.59 -.18 -1.5" for="500"></a-animation>
+            <a-animation attribute="visible" begin="45000" to="false"></a-animation>
+        </a-entity>
+        <a-text value="b cell notified, goes to site of pathogen" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
+            <a-animation attribute="visible" begin="28000" to="true"></a-animation>
+            <a-animation attribute="visible" begin="31000" to="false"></a-animation>
+        </a-text>
+        <a-text value="b cell replicates itself and creates plasma cells to kill the pathogen" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
+            <a-animation attribute="visible" begin="38000" to="true"></a-animation>
+            <a-animation attribute="visible" begin="40000" to="false"></a-animation>
+        </a-text>
+        <a-text value="pathogen killed, memory cells stay in bloodstream, to remove pathogen quickly when exposed to it again" color="#0000ff" visible="false" position="-1.85 3.541 -1.33" scale=".5 .5 .5">
+            <a-animation attribute="visible" begin="42000" to="true"></a-animation>
+            <a-animation attribute="visible" begin="52000" to="false"></a-animation>
+        </a-text>
+        -->
+      </a-scene>
     </body>
 </html>
