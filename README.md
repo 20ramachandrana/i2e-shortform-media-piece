@@ -15,7 +15,7 @@ Link to the WebVR app:https://20ramachandrana.github.io/i2e-shortform-media-piec
 - Bagheri, A.; Genikomsakis, K.N.; Koutra, S.; Sakellariou, V.; Ioakimidis, C.S. Use of AI Algorithms in 
   Different Building Typologies for Energy Efficiency towards Smart Buildings. Buildings 2021, 11, 613. 
   https://doi.org/10.3390/buildings11120613
-  Muhammad Uzair Mehmood, Daye Chun,  Zeeshan, Hyunjoo Han, Gyuyeob Jeon, Kuan Chen,
-- A review of the applications of artificial intelligence and big data to buildings for energy-efficiency and a comfortable indoor living environment,
+- Muhammad Uzair Mehmood, Daye Chun,  Zeeshan, Hyunjoo Han, Gyuyeob Jeon, Kuan Chen,
+A review of the applications of artificial intelligence and big data to buildings for energy-efficiency and a comfortable indoor living environment,
   Energy and Buildings, Volume 202, 2019, 109383, ISSN 0378-7788, https://doi.org/10.1016/j.enbuild.2019.109383. 
   (https://www.sciencedirect.com/science/article/pii/S0378778819316688)
